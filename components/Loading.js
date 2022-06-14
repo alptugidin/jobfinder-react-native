@@ -4,7 +4,7 @@ import AnimatedLottieView from 'lottie-react-native';
 const Loading = () => {
   return (
     <AnimatedLottieView
-      source={require('../assets/96916-searching.json')}
+      source={require('../assets/6226-nodata.json')}
       autoPlay
     />
   );

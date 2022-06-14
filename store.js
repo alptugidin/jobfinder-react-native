@@ -1,8 +1,8 @@
 import {configureStore} from '@reduxjs/toolkit';
-import counterReducer from './stores/counter';
+import favList from './stores/favList';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    favList: favList,
   },
 });

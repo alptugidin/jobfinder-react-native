@@ -3,9 +3,14 @@ import {colors} from '../../colors';
 
 export const style = StyleSheet.create({
   main: {
-    height: 130,
+    // height: 130,
     borderRadius: 10,
   },
+  //
+  // mainFav: {
+  //   height: 160,
+  //   borderRadius: 10,
+  // },
 
   card: {
     padding: 5,
@@ -31,6 +36,8 @@ export const style = StyleSheet.create({
   locationView: {
     flexDirection: 'row',
     marginTop: 5,
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
   },
 
   location: {
@@ -42,14 +49,23 @@ export const style = StyleSheet.create({
     fontSize: 15,
   },
 
-  levelView: {
-    position: 'absolute',
-    right: 6,
-    bottom: 6,
-  },
-
   level: {
     color: colors.red500,
     fontWeight: 'bold',
+    textAlign: 'right',
+  },
+
+  iconButton: {
+    paddingHorizontal: 30,
+  },
+
+  removeText: {
+    color: 'white',
+  },
+
+  removeView: {
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });

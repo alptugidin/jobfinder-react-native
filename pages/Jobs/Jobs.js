@@ -1,17 +1,19 @@
-import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Button, FlatList, Text, View} from 'react-native';
 import {style} from '../../pages/Jobs/Jobs.style';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Card from '../../components/Card/Card';
+import Separator from '../../components/Separator';
+import {useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
+import {updateJobsCount} from '../../stores/favList';
 
 const Jobs = ({navigation}) => {
   const url = 'https://www.themuse.com/api/public/jobs?page=1';
   const {data, error, loading} = useFetch(url);
 
-  const Seperator = () => {
-    return <View style={{padding: 5}} />;
-  };
+  const onPress = () => {};
 
   const renderCard = item => {
     return (
@@ -22,6 +24,8 @@ const Jobs = ({navigation}) => {
         level={item.levels[0].name}
         nav={navigation}
         id={item.id}
+        contents={item.contents}
+        contact={item.refs.landing_page}
       />
     );
   };
@@ -34,9 +38,9 @@ const Jobs = ({navigation}) => {
       ) : (
         <View style={style.main}>
           <FlatList
-            ItemSeparatorComponent={Seperator}
-            ListHeaderComponent={Seperator}
-            ListFooterComponent={Seperator}
+            ItemSeparatorComponent={Separator}
+            ListHeaderComponent={Separator}
+            ListFooterComponent={Separator}
             data={data.results}
             renderItem={({item}) => renderCard(item)}
           />
